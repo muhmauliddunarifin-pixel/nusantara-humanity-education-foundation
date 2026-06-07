@@ -41,7 +41,7 @@ export const KontakPage: React.FC = () => {
       name: 'Instagram Resmi',
       value: '@nhe_foundation26',
       icon: Instagram,
-      href: 'https://www.instagram.com/nhe_foundation26?igsh=ODZncW10dXpkM2lu',
+      href: 'https://www.instagram.com/nhefoundation.id/',
     },
     {
       name: 'Saluran WhatsApp',
