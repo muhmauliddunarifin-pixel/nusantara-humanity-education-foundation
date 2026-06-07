@@ -1,0 +1,96 @@
+{
+  "entities": {
+    "volunteer": {
+      "title": "Volunteer Registration",
+      "description": "Information of a registered volunteer",
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": "string",
+          "description": "Full name of the volunteer"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Active email address"
+        },
+        "whatsapp": {
+          "type": "string",
+          "description": "WhatsApp active coordinate"
+        },
+        "city": {
+          "type": "string",
+          "description": "Current city of domicile"
+        },
+        "skill": {
+          "type": "string",
+          "description": "Core specialty / skill category selected"
+        },
+        "motivation": {
+          "type": "string",
+          "description": "Reason / motivation for joining as a volunteer"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time of registration"
+        }
+      },
+      "required": [
+        "fullName",
+        "email",
+        "whatsapp",
+        "city",
+        "skill",
+        "motivation",
+        "createdAt"
+      ]
+    },
+    "contact": {
+      "title": "Contact Message",
+      "description": "Messages sent from visitors directly through the contact form",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Sender name"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Sender email Address"
+        },
+        "subject": {
+          "type": "string",
+          "description": "Email subject"
+        },
+        "message": {
+          "type": "string",
+          "description": "Email content"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time of sending"
+        }
+      },
+      "required": [
+        "name",
+        "email",
+        "subject",
+        "message",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/volunteers/{volunteerId}": {
+      "schema": "volunteer",
+      "description": "A collection containing volunteer registrations"
+    },
+    "/contacts/{contactId}": {
+      "schema": "contact",
+      "description": "A collection containing contact messages"
+    }
+  }
+}

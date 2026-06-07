@@ -1,0 +1,79 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 1. Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Path verification & shared primitives
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    // 2. Validation Blueprints
+    function isValidVolunteer(data) {
+      return data.keys().hasAll(['fullName', 'email', 'whatsapp', 'city', 'skill', 'motivation', 'createdAt'])
+        && data.keys().size() == 7
+        && data.fullName is string
+        && data.fullName.size() > 0
+        && data.fullName.size() <= 100
+        && data.email is string
+        && data.email.size() > 0
+        && data.email.size() <= 100
+        && data.whatsapp is string
+        && data.whatsapp.size() >= 9
+        && data.whatsapp.size() <= 20
+        && data.city is string
+        && data.city.size() > 0
+        && data.city.size() <= 100
+        && data.skill is string
+        && data.skill.size() > 0
+        && data.skill.size() <= 50
+        && data.motivation is string
+        && data.motivation.size() >= 20
+        && data.motivation.size() <= 1000
+        && data.createdAt == request.time;
+    }
+
+    function isValidContact(data) {
+      return data.keys().hasAll(['name', 'email', 'subject', 'message', 'createdAt'])
+        && data.keys().size() == 5
+        && data.name is string
+        && data.name.size() > 0
+        && data.name.size() <= 100
+        && data.email is string
+        && data.email.size() > 0
+        && data.email.size() <= 100
+        && data.subject is string
+        && data.subject.size() > 0
+        && data.subject.size() <= 150
+        && data.message is string
+        && data.message.size() >= 15
+        && data.message.size() <= 3000
+        && data.createdAt == request.time;
+    }
+
+    // Volunteers collection rules
+    match /volunteers/{volunteerId} {
+      allow create: if isValidId(volunteerId) && isValidVolunteer(incoming());
+      allow read, list: if request.auth != null && (request.auth.token.email == 'maulidcreative@gmail.com' || request.auth.token.email == 'nhefoundation26@gmail.com');
+      allow update, delete: if request.auth != null && (request.auth.token.email == 'maulidcreative@gmail.com' || request.auth.token.email == 'nhefoundation26@gmail.com');
+    }
+
+    // Sheets configuration rules (Admin ONLY)
+    match /sheets_config/{configId} {
+      allow read, write: if request.auth != null && (request.auth.token.email == 'maulidcreative@gmail.com' || request.auth.token.email == 'nhefoundation26@gmail.com');
+    }
+
+    // Contacts collection rules
+    match /contacts/{contactId} {
+      allow create: if isValidId(contactId) && isValidContact(incoming());
+      allow get, list, update, delete: if false; // Strict public restriction
+    }
+  }
+}

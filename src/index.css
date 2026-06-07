@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-gold: #FFC700;
+  --color-gold-hover: #FFCC00;
+  --color-dark: #1F1F1F;
+  --color-light-dark: #2A2A2A;
+  --color-muted-dark: #1F1F1F;
+  --color-pure-dark: #1F1F1F;
+}
+
+/* Clean background scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1F1F1F;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FFC700;
+}
+
+html, body {
+  background-color: #1F1F1F;
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Base custom utility classes for premium experience */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FFFFFF 30%, #FFC700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-gold-radial {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 199, 0, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.gradient-gold-bg {
+  background: linear-gradient(135deg, #FFC700 0%, #FFCC00 100%);
+}
+
+.glass-navbar {
+  background: rgba(31, 31, 31, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 1rem; /* 16px (rounded-2xl) */
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 199, 0, 0.5);
+  background: rgba(255, 199, 0, 0.1);
+  box-shadow: 0 10px 40px -10px rgba(255, 199, 0, 0.2);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  transition: all 0.2s ease-in-out;
+}
+
+.glass-input:focus {
+  border-color: #FFC700;
+  box-shadow: 0 0 15px rgba(255, 199, 0, 0.15);
+  outline: none;
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "Nusantara Humanity & Education Foundation",
+  "description": "Lembaga di bawah naungan Forum Genre Kabupaten Muna yang berfokus pada penguatan nilai-nilai kemanusiaan melalui pendidikan, pemberdayaan generasi muda, dan gerakan sosial berkelanjutan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
