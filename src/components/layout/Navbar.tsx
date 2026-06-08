@@ -144,7 +144,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onPageChange }) => {
             className="w-full mt-2"
             onClick={() => handleNavClick('relawan')}
           >
-            Menjadi Relawan
+            Gabung Relawan
           </Button>
         </div>
       </Sheet>
