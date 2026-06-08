@@ -158,7 +158,7 @@ export const RelawanPage: React.FC = () => {
             <div className="space-y-4 text-xs sm:text-sm text-neutral-300">
               <div className="flex gap-3">
                 <div className="w-5 h-5 rounded bg-white/5 border border-white/10 flex items-center justify-center text-xs text-gold shrink-0 mt-0.5">✓</div>
-                <p>Minimal berusia 18 tahun dan berkomitmen menyelesaikan program penugasan kerja yang disepakati.</p>
+                <p>Minimal berusia 15 tahun dan berkomitmen menyelesaikan program penugasan kerja yang disepakati.</p>
               </div>
               <div className="flex gap-3">
                 <div className="w-5 h-5 rounded bg-white/5 border border-white/10 flex items-center justify-center text-xs text-gold shrink-0 mt-0.5">✓</div>
