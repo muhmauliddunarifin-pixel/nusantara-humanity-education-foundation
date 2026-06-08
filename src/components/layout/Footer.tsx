@@ -15,7 +15,7 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ onPageChange }) => {
   const socialLinks = [
     { name: 'Email Address', icon: Mail, href: 'mailto:nhefoundation26@gmail.com', detail: 'nhefoundation26@gmail.com' },
-    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/nhe_foundation26?igsh=ODZncW10dXpkM2lu', detail: '@nhe_foundation26' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/nhefoundation.id/', detail: '@nhe_foundation26' },
     { name: 'Saluran WhatsApp', icon: MessageSquare, href: 'https://whatsapp.com/channel/0029VbCJVVhHQbSBKk2brz1C', detail: 'WhatsApp Channel' },
     { name: 'Discord', icon: ArrowUpRight, href: 'https://discord.gg/TNRCGvk42', detail: 'Join Discord' },
   ];
