@@ -243,7 +243,7 @@ export const RelawanPage: React.FC = () => {
                 <Input
                   label="Kota Domisili Asal"
                   name="city"
-                  placeholder="Contoh: Bandung / Jayapura"
+                  placeholder="Contoh: Raha / Kendari"
                   value={formData.city}
                   onChange={handleInputChange}
                   error={errors.city}
