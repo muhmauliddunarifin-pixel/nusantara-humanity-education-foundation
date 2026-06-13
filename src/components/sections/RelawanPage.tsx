@@ -209,7 +209,7 @@ export const RelawanPage: React.FC = () => {
                 <Input
                   label="Nama Lengkap Sobat"
                   name="fullName"
-                  placeholder="Contoh: Arya Yudhistira"
+                  placeholder="Contoh: Maulid"
                   value={formData.fullName}
                   onChange={handleInputChange}
                   error={errors.fullName}
