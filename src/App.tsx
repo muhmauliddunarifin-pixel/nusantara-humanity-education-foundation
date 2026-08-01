@@ -27,7 +27,7 @@ import { KontakPage } from './components/sections/KontakPage';
 export default function App() {
   return(
     <>
-      <h1>Modal juga kune korang bikin website, tidak malu k dibayarkan, OOOWH Korang bikin website sendiri. Wleeee 😝😝😝😝😝😝😝</h1>
+      <h1>Modal juga kune korang bikin website, tidak malu k dibayarkan, OOOWH Korang bikin website sendiri. Wleeee 😝😝😝😝😝😝😝, Korang cari data NHE, AMAN JI SA SDH Hapusss mii.</h1>
     </>
   )
 }
